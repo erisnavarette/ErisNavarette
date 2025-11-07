@@ -307,7 +307,13 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="contact" className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-12 relative z-10">
+      <section 
+        id="contact" 
+        ref={(el) => (sectionRefs.current.contact = el)}
+        className={`py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-12 relative z-10 transition-all duration-1000 ${
+          visibleSections.contact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#3D2B1F] mb-4" style={{ fontFamily: "'Lora', serif" }}>GET IN TOUCH</h2>
           <div className="w-24 h-1.5 bg-[#8B6F5C] mb-12 sm:mb-16"></div>
@@ -329,6 +335,7 @@ export default function Portfolio() {
                   </div>
                   <span className="text-sm sm:text-base" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>navarette.kurteris@gmail.com</span>
                 </a>
+
                 <a href="https://github.com/erisnavarette" className="flex items-center text-[#5A4639] hover:text-[#3D2B1F] transition-colors">
                   <div className="w-12 h-12 bg-white bg-opacity-40 backdrop-blur-sm flex items-center justify-center mr-4 flex-shrink-0">
                     <svg className="w-6 h-6 text-[#6B5544]" fill="currentColor" viewBox="0 0 24 24">
@@ -337,6 +344,7 @@ export default function Portfolio() {
                   </div>
                   <span className="text-sm sm:text-base" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>github.com/erisnavarette</span>
                 </a>
+
                 <a href="https://www.linkedin.com/in/navarette-kurt-eris-b75433374/" className="flex items-center text-[#5A4639] hover:text-[#3D2B1F] transition-colors">
                   <div className="w-12 h-12 bg-white bg-opacity-40 backdrop-blur-sm flex items-center justify-center mr-4 flex-shrink-0">
                     <svg className="w-6 h-6 text-[#6B5544]" fill="currentColor" viewBox="0 0 24 24">
@@ -360,6 +368,7 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
 
       <footer className="bg-[#6B5544] border-t border-[#5A4639] py-6 sm:py-8 px-4 sm:px-6 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
